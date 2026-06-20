@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catatan Guru — Adiljaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="catatan-guru.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect x="6" y="2" width="4" height="28" rx="2" fill="#4a5c2f"/>
+          <rect x="13" y="6" width="4" height="22" rx="2" fill="#4a5c2f"/>
+          <rect x="20" y="2" width="4" height="28" rx="2" fill="#4a5c2f"/>
+          <path d="M6 10 Q10 7 14 10" stroke="#c8a96e" stroke-width="1.5" fill="none"/>
+          <path d="M13 14 Q17 11 21 14" stroke="#c8a96e" stroke-width="1.5" fill="none"/>
+        </svg>
+        <div class="navbar__logo-text">
+          <span class="navbar__brand">Kerajinan Alam</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="navbar__links">
+        <a href="index.html" class="navbar__link">Beranda</a>
+        <a href="produk.html" class="navbar__link">Produk</a>
+        <a href="profile.html" class="navbar__link">Profile</a>
+        <a href="#" class="navbar__link active">Catatan</a>
+        <a href="dokumentasi.html" class="navbar__link">Dokumentasi</a>
+        <a href="kontak.html" class="navbar__link">Kontak</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="navbar__icon-btn" aria-label="Cari">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="navbar__icon-btn" aria-label="Akun">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <button class="navbar__icon-btn cart-btn" aria-label="Keranjang">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge">0</span>
+        </button>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Beranda</a>
+      <a href="produk.html" class="mobile-menu__link">Produk</a>
+      <a href="profile.html" class="mobile-menu__link">Profile</a>
+      <a href="#" class="mobile-menu__link active">Catatan</a>
+      <a href="dokumentasi.html" class="mobile-menu__link">Dokumentasi</a>
+      <a href="kontak.html" class="mobile-menu__link">Kontak</a>
+    </div>
+  </header>
+
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__bamboo hero__bamboo--left">
+      <svg viewBox="0 0 120 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="0" width="18" height="500" rx="9" fill="#b8c89a" opacity=".6"/>
+        <rect x="62" y="0" width="12" height="500" rx="6" fill="#a0b57e" opacity=".45"/>
+        <rect x="40" y="80" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <rect x="40" y="180" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <rect x="40" y="280" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <rect x="40" y="380" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <!-- daun kiri -->
+        <path d="M50 100 Q10 80 5 50 Q30 90 50 100Z" fill="#b8c89a" opacity=".55"/>
+        <path d="M50 220 Q5 200 0 165 Q28 210 50 220Z" fill="#a0b57e" opacity=".5"/>
+        <path d="M55 320 Q8 295 15 260 Q40 305 55 320Z" fill="#b8c89a" opacity=".45"/>
+      </svg>
+    </div>
+    <div class="hero__bamboo hero__bamboo--right">
+      <svg viewBox="0 0 120 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="50" y="0" width="18" height="500" rx="9" fill="#b8c89a" opacity=".55"/>
+        <rect x="35" y="0" width="12" height="500" rx="6" fill="#a0b57e" opacity=".4"/>
+        <rect x="50" y="100" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <rect x="50" y="200" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <rect x="50" y="300" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <rect x="50" y="400" width="18" height="3" rx="1.5" fill="#8ea860" opacity=".7"/>
+        <path d="M68 120 Q110 100 115 70 Q90 105 68 120Z" fill="#b8c89a" opacity=".5"/>
+        <path d="M65 240 Q112 215 118 180 Q88 225 65 240Z" fill="#a0b57e" opacity=".45"/>
+      </svg>
+    </div>
+
+    <div class="hero__content">
+      <h1 class="hero__title">Catatan Guru</h1>
+      <div class="hero__divider">
+        <span></span>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 18 Q5 13 7 7 Q10 2 13 7 Q15 13 10 18Z" fill="#c8a96e"/></svg>
+        <span></span>
+      </div>
+      <nav class="breadcrumb">
+        <a href="#">Beranda</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        <span>Catatan Guru</span>
+      </nav>
+      <p class="hero__desc">Halaman ini berisi evaluasi dan catatan dari guru pembimbing<br>terkait proyek yang telah kami kerjakan.</p>
+    </div>
+  </section>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <p class="toolbar__count" id="catatanCount">0 Catatan</p>
+        <div class="toolbar__right">
+          <!-- Tombol admin login (selalu tampil) -->
+          <button class="btn-admin-login" id="btnAdminLogin" title="Login sebagai Admin">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span id="adminLoginLabel">Admin</span>
+          </button>
+          <!-- Hanya muncul saat login admin -->
+          <button class="btn-tambah" id="btnTambah" style="display:none">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            Buat Catatan
+          </button>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14,2 14,8 20,8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10,9 9,9 8,9"/>
+          </svg>
+        </div>
+        <h3>Belum ada catatan</h3>
+        <p>Catatan dari guru pembimbing akan muncul di sini.</p>
+        <button class="btn-tambah btn-tambah--outline" id="btnTambahEmpty" style="display:none" onclick="document.getElementById('btnTambah').click()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Buat Catatan Pertama
+        </button>
+      </div>
+
+      <!-- Daftar catatan -->
+      <div class="catatan-list" id="catatanList"></div>
+
+      <!-- Kembali -->
+      <div class="back-wrap">
+        <a href="#" class="btn-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Kembali ke Profil Kelompok
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="logo.png" alt="" height="auto" width="100px">
+        <span>Kerajinan Alam</span>
+        <p>Keindahan Nusantara dalam setiap serat bambu.</p>
+      </div>
+      <div class="footer__copy">
+        &copy; 2026 Kerajinan Alam. Semua hak dilindungi.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── MODAL ADMIN LOGIN ── -->
+  <div class="modal-overlay" id="modalLogin" role="dialog" aria-modal="true">
+    <div class="modal modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title">🔐 Login Admin</h2>
+        <button class="modal__close" id="modalLoginClose" aria-label="Tutup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <div class="field">
+          <label class="field__label" for="inputPassword">Password Admin</label>
+          <input type="password" id="inputPassword" class="field__input" placeholder="Masukkan password…" />
+          <span class="field__error" id="errPassword" style="display:none">Password salah. Coba lagi.</span>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn-batal" id="btnLoginBatal">Batal</button>
+        <button class="btn-simpan" id="btnLoginMasuk">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Masuk
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MODAL BUAT CATATAN ── -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modalTitle">Buat Catatan Guru</h2>
+        <button class="modal__close" id="modalClose" aria-label="Tutup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <!-- Nama guru -->
+        <div class="field">
+          <label class="field__label" for="inputNama">
+            Nama Bapak/Ibu <span class="required">*</span>
+          </label>
+          <input type="text" id="inputNama" class="field__input" placeholder="Contoh: Ibu Rina Handayani, S.Pd." maxlength="80" />
+          <span class="field__error" id="errNama">Nama guru wajib diisi.</span>
+        </div>
+
+        <!-- Jabatan -->
+        <div class="field">
+          <label class="field__label" for="inputJabatan">Jabatan</label>
+          <input type="text" id="inputJabatan" class="field__input" placeholder="Contoh: Guru Pembimbing" maxlength="60" />
+        </div>
+
+        <!-- Tanggal -->
+        <div class="field">
+          <label class="field__label" for="inputTanggal">
+            Tanggal Penilaian <span class="required">*</span>
+          </label>
+          <input type="date" id="inputTanggal" class="field__input" />
+          <span class="field__error" id="errTanggal">Tanggal penilaian wajib diisi.</span>
+        </div>
+
+        <!-- Rating -->
+        <div class="field">
+          <label class="field__label">Rating</label>
+          <div class="star-picker" id="starPicker" role="radiogroup" aria-label="Pilih rating">
+            <button class="star" data-val="1" aria-label="1 bintang">★</button>
+            <button class="star" data-val="2" aria-label="2 bintang">★</button>
+            <button class="star" data-val="3" aria-label="3 bintang">★</button>
+            <button class="star" data-val="4" aria-label="4 bintang">★</button>
+            <button class="star" data-val="5" aria-label="5 bintang">★</button>
+          </div>
+        </div>
+
+        <!-- Penilaian -->
+        <div class="field">
+          <label class="field__label" for="inputPenilaian">Label Penilaian</label>
+          <select id="inputPenilaian" class="field__input field__select">
+            <option value="">— Pilih penilaian —</option>
+            <option value="Sangat Baik">Sangat Baik</option>
+            <option value="Baik">Baik</option>
+            <option value="Cukup">Cukup</option>
+            <option value="Perlu Perbaikan">Perlu Perbaikan</option>
+          </select>
+        </div>
+
+        <!-- Catatan -->
+        <div class="field">
+          <label class="field__label" for="inputCatatan">Catatan / Evaluasi</label>
+          <textarea id="inputCatatan" class="field__input field__textarea" placeholder="Tuliskan evaluasi atau catatan dari guru pembimbing…" rows="5" maxlength="800"></textarea>
+          <span class="field__char" id="charCount">0 / 800</span>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <button class="btn-batal" id="btnBatal">Batal</button>
+        <button class="btn-simpan" id="btnSimpan">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+          Simpan Catatan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Navbar & Mobile Menu (dari index.html) ─────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-menu__link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ╔══════════════════════════════════════════════════════════╗
+    // ║  KONFIGURASI — isi variabel di bawah ini                ║
+    // ╚══════════════════════════════════════════════════════════╝
+    //
+    //  Di JSONBin.io, buat DUA API Key:
+    //  - Master Key  → bisa baca + tulis (hanya kamu/admin yang tahu)
+    //  - Access Key  → hanya baca (aman ditaruh di sini, publik bisa lihat)
+    //
+    //  Cara buat Access Key:
+    //  JSONBin Dashboard → API Keys → "+ ADD ACCESS KEY"
+    //  → centang READ only → Save
+    //
+    const JSONBIN_BIN_ID     = 'ISI_BIN_ID_KAMU';      // Bin ID dari JSONBin
+    const JSONBIN_ACCESS_KEY = 'ISI_ACCESS_KEY_KAMU';   // Read-only key (aman untuk publik)
+    const JSONBIN_MASTER_KEY = 'ISI_MASTER_KEY_KAMU';   // Master key (untuk admin write)
+    const ADMIN_PASSWORD     = 'ISI_PASSWORD_ADMIN';    // Password login admin sesukamu
+    const JSONBIN_URL        = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+    const CONFIGURED         = JSONBIN_BIN_ID !== 'ISI_BIN_ID_KAMU';
+
+    // ── State ──────────────────────────────────────────────
+    let catatan        = [];
+    let selectedRating = 0;
+    let isAdmin        = false;
+
+    // ── Elemen ────────────────────────────────────────────
+    const btnTambah      = document.getElementById('btnTambah');
+    const btnTambahEmpty = document.getElementById('btnTambahEmpty');
+    const btnAdminLogin  = document.getElementById('btnAdminLogin');
+    const adminLoginLabel= document.getElementById('adminLoginLabel');
+    const modalOverlay   = document.getElementById('modalOverlay');
+    const modalLogin     = document.getElementById('modalLogin');
+    const modalClose     = document.getElementById('modalClose');
+    const modalLoginClose= document.getElementById('modalLoginClose');
+    const btnBatal       = document.getElementById('btnBatal');
+    const btnLoginBatal  = document.getElementById('btnLoginBatal');
+    const btnSimpan      = document.getElementById('btnSimpan');
+    const btnLoginMasuk  = document.getElementById('btnLoginMasuk');
+    const catatanList    = document.getElementById('catatanList');
+    const emptyState     = document.getElementById('emptyState');
+    const catatanCount   = document.getElementById('catatanCount');
+    const starPicker     = document.getElementById('starPicker');
+    const inputCatatan   = document.getElementById('inputCatatan');
+    const charCount      = document.getElementById('charCount');
+    const inputPassword  = document.getElementById('inputPassword');
+    const errPassword    = document.getElementById('errPassword');
+
+    // ── Admin mode toggle ─────────────────────────────────
+    function setAdminMode(on) {
+      isAdmin = on;
+      btnTambah.style.display      = on ? '' : 'none';
+      btnTambahEmpty.style.display = on ? '' : 'none';
+      adminLoginLabel.textContent  = on ? 'Keluar' : 'Admin';
+      btnAdminLogin.classList.toggle('btn-admin-login--active', on);
+      // Tampilkan/sembunyikan tombol hapus di semua card
+      document.querySelectorAll('.catatan-card__del').forEach(b => {
+        b.style.display = on ? '' : 'none';
+      });
+      if (on) sessionStorage.setItem('adminLoggedIn', '1');
+      else    sessionStorage.removeItem('adminLoggedIn');
+    }
+
+    // ── Admin login modal ─────────────────────────────────
+    btnAdminLogin.addEventListener('click', () => {
+      if (isAdmin) { setAdminMode(false); return; }
+      inputPassword.value   = '';
+      errPassword.style.display = 'none';
+      inputPassword.classList.remove('field__input--error');
+      modalLogin.classList.add('open');
+      setTimeout(() => inputPassword.focus(), 100);
+    });
+    function closeLoginModal() { modalLogin.classList.remove('open'); }
+    modalLoginClose.addEventListener('click', closeLoginModal);
+    btnLoginBatal.addEventListener('click', closeLoginModal);
+    modalLogin.addEventListener('click', e => { if (e.target === modalLogin) closeLoginModal(); });
+
+    btnLoginMasuk.addEventListener('click', doLogin);
+    inputPassword.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+    function doLogin() {
+      if (inputPassword.value === ADMIN_PASSWORD) {
+        closeLoginModal();
+        setAdminMode(true);
+      } else {
+        errPassword.style.display = 'block';
+        inputPassword.classList.add('field__input--error');
+        inputPassword.value = '';
+        inputPassword.focus();
+      }
+    }
+
+    // ── Loading UI ────────────────────────────────────────
+    function setLoading(on) {
+      catatanList.style.opacity       = on ? '.35' : '1';
+      catatanList.style.pointerEvents = on ? 'none' : '';
+      if (on) catatanCount.textContent = 'Memuat data…';
+    }
+
+    // ── Notice jika belum konfigurasi ─────────────────────
+    function showConfigNotice() {
+      if (document.getElementById('configNotice')) return;
+      const notice = document.createElement('div');
+      notice.id = 'configNotice';
+      notice.style.cssText = `
+        background:#fff8e8;border:1.5px solid #c8a96e;border-radius:10px;
+        padding:.85rem 1.1rem;margin-bottom:1.4rem;font-size:.82rem;
+        color:#7a5c1a;display:flex;align-items:flex-start;gap:.6rem;line-height:1.6;
+      `;
+      notice.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2" style="flex-shrink:0;margin-top:2px">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span>
+          <strong>Mode offline</strong> — catatan hanya tersimpan di browser ini.<br>
+          Untuk menyimpan permanen, isi <code>JSONBIN_BIN_ID</code>, <code>JSONBIN_ACCESS_KEY</code>,
+          <code>JSONBIN_MASTER_KEY</code>, dan <code>ADMIN_PASSWORD</code> di dalam file <code>catatan-guru.html</code>.
+          Daftar gratis di <a href="https://jsonbin.io" target="_blank" style="color:#4a5c2f;font-weight:600">jsonbin.io</a>.
+        </span>
+      `;
+      document.querySelector('.container').insertBefore(notice, document.querySelector('.toolbar'));
+    }
+
+    // ── Cloud: load (pakai Access Key — read only) ────────
+    async function loadFromCloud() {
+      if (!CONFIGURED) {
+        catatan = JSON.parse(localStorage.getItem('catatanGuru') || '[]');
+        renderCatatan();
+        showConfigNotice();
+        return;
+      }
+      setLoading(true);
+      try {
+        const res  = await fetch(`${JSONBIN_URL}/latest`, {
+          headers: { 'X-Access-Key': JSONBIN_ACCESS_KEY }
+        });
+        const json = await res.json();
+        catatan = Array.isArray(json.record) ? json.record : [];
+      } catch {
+        catatan = JSON.parse(localStorage.getItem('catatanGuru') || '[]');
+      }
+      setLoading(false);
+      renderCatatan();
+    }
+
+    // ── Cloud: save (pakai Master Key — write) ────────────
+    async function saveToCloud() {
+      localStorage.setItem('catatanGuru', JSON.stringify(catatan));
+      if (!CONFIGURED) return;
+      try {
+        await fetch(JSONBIN_URL, {
+          method : 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': JSONBIN_MASTER_KEY
+          },
+          body: JSON.stringify(catatan)
+        });
+      } catch {
+        console.warn('Gagal simpan ke cloud.');
+      }
+    }
+
+    // ── Modal buat catatan ────────────────────────────────
+    function openModal() {
+      resetForm();
+      modalOverlay.classList.add('open');
+      document.getElementById('inputNama').focus();
+    }
+    function closeModal() { modalOverlay.classList.remove('open'); }
+    btnTambah.addEventListener('click', openModal);
+    modalClose.addEventListener('click', closeModal);
+    btnBatal.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+
+    // ── Bintang ───────────────────────────────────────────
+    const stars = starPicker.querySelectorAll('.star');
+    function updateStars(val) {
+      stars.forEach(s => s.classList.toggle('active', +s.dataset.val <= val));
+    }
+    stars.forEach(s => {
+      s.addEventListener('click', () => { selectedRating = +s.dataset.val; updateStars(selectedRating); });
+      s.addEventListener('mouseenter', () => updateStars(+s.dataset.val));
+      s.addEventListener('mouseleave', () => updateStars(selectedRating));
+    });
+
+    // ── Char counter ──────────────────────────────────────
+    inputCatatan.addEventListener('input', () => {
+      charCount.textContent = `${inputCatatan.value.length} / 800`;
+    });
+
+    // ── Reset form ────────────────────────────────────────
+    function resetForm() {
+      ['inputNama','inputJabatan','inputTanggal','inputPenilaian','inputCatatan']
+        .forEach(id => { document.getElementById(id).value = ''; });
+      selectedRating = 0; updateStars(0);
+      charCount.textContent = '0 / 800';
+      document.getElementById('errNama').style.display    = 'none';
+      document.getElementById('errTanggal').style.display = 'none';
+      document.getElementById('inputNama').classList.remove('field__input--error');
+      document.getElementById('inputTanggal').classList.remove('field__input--error');
+    }
+
+    // ── Validasi & simpan ─────────────────────────────────
+    btnSimpan.addEventListener('click', async () => {
+      const nama    = document.getElementById('inputNama').value.trim();
+      const tanggal = document.getElementById('inputTanggal').value;
+
+      document.getElementById('errNama').style.display    = nama    ? 'none' : 'block';
+      document.getElementById('errTanggal').style.display = tanggal ? 'none' : 'block';
+      document.getElementById('inputNama').classList.toggle('field__input--error', !nama);
+      document.getElementById('inputTanggal').classList.toggle('field__input--error', !tanggal);
+      if (!nama || !tanggal) return;
+
+      const jabatan   = document.getElementById('inputJabatan').value.trim() || 'Guru Pembimbing';
+      const penilaian = document.getElementById('inputPenilaian').value;
+      const isi       = document.getElementById('inputCatatan').value.trim();
+
+      btnSimpan.textContent = 'Menyimpan…';
+      btnSimpan.disabled    = true;
+
+      catatan.push({ nama, jabatan, tanggal, rating: selectedRating, penilaian, isi });
+      await saveToCloud();
+      renderCatatan();
+      closeModal();
+
+      btnSimpan.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg> Simpan Catatan`;
+      btnSimpan.disabled  = false;
+    });
+
+    // ── Format tanggal ────────────────────────────────────
+    function formatTanggal(iso) {
+      const d = new Date(iso + 'T00:00:00');
+      return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    // ── Render ────────────────────────────────────────────
+    function renderCatatan() {
+      emptyState.style.display = catatan.length ? 'none' : 'flex';
+      catatanCount.textContent = `${catatan.length} Catatan`;
+      catatanList.innerHTML    = '';
+
+      catatan.forEach((c, i) => {
+        const starsHtml = Array.from({length:5}, (_,k) =>
+          `<span class="star-display${k < c.rating ? ' filled' : ''}">★</span>`).join('');
+
+        const card = document.createElement('div');
+        card.className = 'catatan-card';
+        card.innerHTML = `
+          <div class="catatan-card__left">
+            <div class="catatan-card__icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" stroke="#e8dfc8" stroke-width="1.5" stroke-linecap="round"/>
+                <rect x="9" y="3" width="6" height="4" rx="1" stroke="#e8dfc8" stroke-width="1.5"/>
+                <path d="M9 12h6M9 16h4" stroke="#e8dfc8" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="17" cy="17" r="3" fill="#c8a96e" stroke="none"/>
+                <path d="M16 17l1 1 2-2" stroke="#3a4d1e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="catatan-card__subtitle">Evaluasi Proyek</h3>
+            <div class="catatan-card__divider"></div>
+            <p class="catatan-card__desc">Penilaian, saran, dan catatan yang diberikan oleh guru pembimbing untuk proyek kami.</p>
+          </div>
+          <div class="catatan-card__right">
+            <div class="catatan-card__body">
+              <span class="quote-open">"</span>
+              <p class="catatan-card__isi">${c.isi || '<em style="color:#999">Tidak ada catatan tertulis.</em>'}</p>
+              ${c.rating ? `<div class="catatan-card__stars">${starsHtml}</div>` : ''}
+              <span class="quote-close">"</span>
+            </div>
+            <div class="catatan-card__meta">
+              <div class="meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <div><strong>${c.nama}</strong><span>${c.jabatan}</span></div>
+              </div>
+              <div class="meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                <div><strong>Tanggal Penilaian</strong><span>${formatTanggal(c.tanggal)}</span></div>
+              </div>
+              ${c.penilaian ? `
+              <div class="meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+                <div><strong>Penilaian</strong><span>${c.penilaian}</span></div>
+              </div>` : ''}
+            </div>
+          </div>
+          <button class="catatan-card__del" onclick="hapusCatatan(${i})" aria-label="Hapus catatan" style="display:${isAdmin ? '' : 'none'}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        `;
+        catatanList.appendChild(card);
+      });
+    }
+
+    async function hapusCatatan(i) {
+      if (!isAdmin) return;
+      if (confirm('Hapus catatan ini?')) {
+        catatan.splice(i, 1);
+        await saveToCloud();
+        renderCatatan();
+      }
+    }
+
+    // ── Init ──────────────────────────────────────────────
+    // Cek sesi admin (bertahan selama tab tidak ditutup)
+    if (sessionStorage.getItem('adminLoggedIn')) setAdminMode(true);
+    loadFromCloud();
+
+    // ── State ──────────────────────────────────────────────
+    let catatan       = [];
+    let selectedRating = 0;
+
+    // ── Elemen ────────────────────────────────────────────
+    const btnTambah    = document.getElementById('btnTambah');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose   = document.getElementById('modalClose');
+    const btnBatal     = document.getElementById('btnBatal');
+    const btnSimpan    = document.getElementById('btnSimpan');
+    const catatanList  = document.getElementById('catatanList');
+    const emptyState   = document.getElementById('emptyState');
+    const catatanCount = document.getElementById('catatanCount');
+    const starPicker   = document.getElementById('starPicker');
+    const inputCatatan = document.getElementById('inputCatatan');
+    const charCount    = document.getElementById('charCount');
+
+    // ── Loading overlay ───────────────────────────────────
+    function setLoading(on) {
+      catatanList.style.opacity      = on ? '.35' : '1';
+      catatanList.style.pointerEvents = on ? 'none' : '';
+      if (on) catatanCount.textContent = 'Memuat data…';
+    }
+
+    // ── Notice jika belum konfigurasi ─────────────────────
+    function showConfigNotice() {
+      const existing = document.getElementById('configNotice');
+      if (existing) return;
+      const notice = document.createElement('div');
+      notice.id = 'configNotice';
+      notice.style.cssText = `
+        background:#fff8e8;border:1.5px solid #c8a96e;border-radius:10px;
+        padding:.85rem 1.1rem;margin-bottom:1.4rem;font-size:.82rem;
+        color:#7a5c1a;display:flex;align-items:flex-start;gap:.6rem;line-height:1.6;
+      `;
+      notice.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2" style="flex-shrink:0;margin-top:2px">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span>
+          <strong>Mode offline</strong> — catatan hanya tersimpan di browser ini.<br>
+          Untuk menyimpan permanen di semua perangkat:
+          <ol style="margin:.4rem 0 0 1.1rem;padding:0;display:flex;flex-direction:column;gap:.2rem">
+            <li>Daftar gratis di <a href="https://jsonbin.io" target="_blank" style="color:#4a5c2f;font-weight:600">jsonbin.io</a></li>
+            <li>Buat Bin baru dengan isi <code>[]</code>, catat <strong>Bin ID</strong>-nya</li>
+            <li>Buka Account → API Keys → catat <strong>Master Key</strong></li>
+            <li>Buka file <code>catatan-guru.html</code>, isi <code>JSONBIN_BIN_ID</code> & <code>JSONBIN_API_KEY</code></li>
+            <li>Upload ulang ke GitHub → selesai!</li>
+          </ol>
+        </span>
+      `;
+      document.querySelector('.container').insertBefore(notice, document.querySelector('.toolbar'));
+    }
+
+    // ── Cloud: load ───────────────────────────────────────
+    async function loadFromCloud() {
+      if (!CONFIGURED) {
+        catatan = JSON.parse(localStorage.getItem('catatanGuru') || '[]');
+        renderCatatan();
+        showConfigNotice();
+        return;
+      }
+      setLoading(true);
+      try {
+        const res  = await fetch(`${JSONBIN_URL}/latest`, {
+          headers: { 'X-Master-Key': JSONBIN_API_KEY }
+        });
+        const json = await res.json();
+        catatan = Array.isArray(json.record) ? json.record : [];
+      } catch {
+        catatan = JSON.parse(localStorage.getItem('catatanGuru') || '[]');
+      }
+      setLoading(false);
+      renderCatatan();
+    }
+
+    // ── Cloud: save ───────────────────────────────────────
+    async function saveToCloud() {
+      localStorage.setItem('catatanGuru', JSON.stringify(catatan));
+      if (!CONFIGURED) return;
+      try {
+        await fetch(JSONBIN_URL, {
+          method : 'PUT',
+          headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_API_KEY },
+          body   : JSON.stringify(catatan)
+        });
+      } catch {
+        console.warn('Gagal simpan ke cloud, tersimpan lokal saja.');
+      }
+    }
+
+    // ── Modal ─────────────────────────────────────────────
+    function openModal() {
+      resetForm();
+      modalOverlay.classList.add('open');
+      document.getElementById('inputNama').focus();
+    }
+    function closeModal() { modalOverlay.classList.remove('open'); }
+    btnTambah.addEventListener('click', openModal);
+    modalClose.addEventListener('click', closeModal);
+    btnBatal.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+
+    // ── Bintang ───────────────────────────────────────────
+    const stars = starPicker.querySelectorAll('.star');
+    function updateStars(val) {
+      stars.forEach(s => s.classList.toggle('active', +s.dataset.val <= val));
+    }
+    stars.forEach(s => {
+      s.addEventListener('click', () => { selectedRating = +s.dataset.val; updateStars(selectedRating); });
+      s.addEventListener('mouseenter', () => updateStars(+s.dataset.val));
+      s.addEventListener('mouseleave', () => updateStars(selectedRating));
+    });
+
+    // ── Char counter ──────────────────────────────────────
+    inputCatatan.addEventListener('input', () => {
+      charCount.textContent = `${inputCatatan.value.length} / 800`;
+    });
+
+    // ── Reset form ────────────────────────────────────────
+    function resetForm() {
+      ['inputNama','inputJabatan','inputTanggal','inputPenilaian','inputCatatan']
+        .forEach(id => { document.getElementById(id).value = ''; });
+      selectedRating = 0; updateStars(0);
+      charCount.textContent = '0 / 800';
+      document.getElementById('errNama').style.display    = 'none';
+      document.getElementById('errTanggal').style.display = 'none';
+      document.getElementById('inputNama').classList.remove('field__input--error');
+      document.getElementById('inputTanggal').classList.remove('field__input--error');
+    }
+
+    // ── Validasi & simpan ─────────────────────────────────
+    btnSimpan.addEventListener('click', async () => {
+      const nama    = document.getElementById('inputNama').value.trim();
+      const tanggal = document.getElementById('inputTanggal').value;
+
+      document.getElementById('errNama').style.display    = nama    ? 'none' : 'block';
+      document.getElementById('errTanggal').style.display = tanggal ? 'none' : 'block';
+      document.getElementById('inputNama').classList.toggle('field__input--error', !nama);
+      document.getElementById('inputTanggal').classList.toggle('field__input--error', !tanggal);
+      if (!nama || !tanggal) return;
+
+      const jabatan   = document.getElementById('inputJabatan').value.trim() || 'Guru Pembimbing';
+      const penilaian = document.getElementById('inputPenilaian').value;
+      const isi       = document.getElementById('inputCatatan').value.trim();
+
+      btnSimpan.textContent = 'Menyimpan…';
+      btnSimpan.disabled    = true;
+
+      catatan.push({ nama, jabatan, tanggal, rating: selectedRating, penilaian, isi });
+      await saveToCloud();
+      renderCatatan();
+      closeModal();
+
+      btnSimpan.innerHTML  = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg> Simpan Catatan`;
+      btnSimpan.disabled   = false;
+    });
+
+    // ── Format tanggal ────────────────────────────────────
+    function formatTanggal(iso) {
+      const d = new Date(iso + 'T00:00:00');
+      return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    // ── Render ────────────────────────────────────────────
+    function renderCatatan() {
+      emptyState.style.display = catatan.length ? 'none' : 'flex';
+      catatanCount.textContent = `${catatan.length} Catatan`;
+      catatanList.innerHTML    = '';
+
+      catatan.forEach((c, i) => {
+        const starsHtml = Array.from({length:5}, (_,k) =>
+          `<span class="star-display${k < c.rating ? ' filled' : ''}">★</span>`).join('');
+
+        const card = document.createElement('div');
+        card.className = 'catatan-card';
+        card.innerHTML = `
+          <div class="catatan-card__left">
+            <div class="catatan-card__icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" stroke="#e8dfc8" stroke-width="1.5" stroke-linecap="round"/>
+                <rect x="9" y="3" width="6" height="4" rx="1" stroke="#e8dfc8" stroke-width="1.5"/>
+                <path d="M9 12h6M9 16h4" stroke="#e8dfc8" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="17" cy="17" r="3" fill="#c8a96e" stroke="none"/>
+                <path d="M16 17l1 1 2-2" stroke="#3a4d1e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="catatan-card__subtitle">Evaluasi Proyek</h3>
+            <div class="catatan-card__divider"></div>
+            <p class="catatan-card__desc">Penilaian, saran, dan catatan yang diberikan oleh guru pembimbing untuk proyek kami.</p>
+          </div>
+          <div class="catatan-card__right">
+            <div class="catatan-card__body">
+              <span class="quote-open">"</span>
+              <p class="catatan-card__isi">${c.isi || '<em style="color:#999">Tidak ada catatan tertulis.</em>'}</p>
+              ${c.rating ? `<div class="catatan-card__stars">${starsHtml}</div>` : ''}
+              <span class="quote-close">"</span>
+            </div>
+            <div class="catatan-card__meta">
+              <div class="meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <div><strong>${c.nama}</strong><span>${c.jabatan}</span></div>
+              </div>
+              <div class="meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                <div><strong>Tanggal Penilaian</strong><span>${formatTanggal(c.tanggal)}</span></div>
+              </div>
+              ${c.penilaian ? `
+              <div class="meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+                <div><strong>Penilaian</strong><span>${c.penilaian}</span></div>
+              </div>` : ''}
+            </div>
+          </div>
+          <button class="catatan-card__del" onclick="hapusCatatan(${i})" aria-label="Hapus catatan">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        `;
+        catatanList.appendChild(card);
+      });
+    }
+
+    async function hapusCatatan(i) {
+      if (confirm('Hapus catatan ini?')) {
+        catatan.splice(i, 1);
+        await saveToCloud();
+        renderCatatan();
+      }
+    }
+
+    // ── Init — load dari cloud saat halaman dibuka ────────
+    loadFromCloud();
+  </script>
+</body>
+</html>
